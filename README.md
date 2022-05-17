@@ -8,7 +8,7 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Discord](https://img.shields.io/discord/676948200904589322)](https://discord.gg/jRteCzP)
 
-> **Note:** This is library wraps a service that is in Alpha status.
+> **Note:** This library wraps a service that is in Alpha status.
 
 ## Install
 
