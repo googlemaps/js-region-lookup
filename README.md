@@ -37,7 +37,6 @@ const headers = {
         place_type: "locality" as const,
         region_code: "us",
         language: "en",
-        max_candidates: 3,
       },
     ],
   };

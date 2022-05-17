@@ -65,7 +65,7 @@ export interface RegionMatch {
    * as additional options for cases in which either no match is found, or the
    * client-side logic deems the matched Place ID as unsuitable.
    */
-  candidate_place_ids?: string[];
+  candidate_place_ids: string[];
   /**
    * Boundary matching debug information for when no match is found.
    */

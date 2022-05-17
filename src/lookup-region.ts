@@ -28,10 +28,7 @@ import type {
  *
  * One of `place` or `unit_code` must be specified. If none is specified,
  * an INVALID_ARGUMENT error is returned. `region_code` must also be specified
- * except when `place_type` is "country". Optionally, more candidates can be
- * requested (by setting the `max_candidates` field), as additional options for
- * cases in which matches are found with `place_types` different than the one
- * requested.
+ * except when `place_type` is "country".
  *
  * `place` and `unit_code` specify a location to match a Place ID to. For
  * example if `place` is "California" and `region_code` "US" the API
@@ -120,13 +117,6 @@ export interface RegionIdentifier extends LanguageRegion {
     | "locality"
     | "neighborhood"
     | "postal_code";
-
-  /**
-   * Specifies the maximum candidates to return. Candidates are other possible
-   * Place ID matches for the given request. At most three candidates are
-   * currently supported.
-   */
-  max_candidates?: number;
 }
 
 export interface LookupRegionRequestData extends PaginationData {
