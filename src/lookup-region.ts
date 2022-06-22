@@ -67,7 +67,7 @@ export interface RegionIdentifier extends LanguageRegion {
   /**
    *  The location must be specified by one of the following: `place` or `unit_code`.
    */
-  
+
   /**
    * The name of the region to match to a Place ID.
    *
@@ -116,6 +116,19 @@ export interface RegionIdentifier extends LanguageRegion {
     | "locality"
     | "neighborhood"
     | "postal_code";
+
+  /**
+   * The BCP-47 language code, such as "en-US" or "sr-Latn", corresponding to
+   * the language in which the place name and address is requested. If none is
+   * requested, then it defaults to English.
+   */
+  language_code?: string;
+
+  /**
+   * Two-letter ISO-3166 country/region code for the location you're trying to
+   * match. region_code is optional if place_type is "country".
+   */
+  region_code?: string;
 }
 
 export interface LookupRegionRequestData extends PaginationData {

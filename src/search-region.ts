@@ -73,17 +73,33 @@ export interface RegionSearchValue extends LanguageRegion {
    * The Place ID that is contained inside a region to match.
    */
   place_id?: string;
-  
+
   /**
    * Place type to match.
    */
   place_type:
     | "administrative_area_level_1"
     | "administrative_area_level_2"
+    | "administrative_area_level_3"
+    | "administrative_area_level_4"
     | "country"
     | "locality"
+    | "sublocality_level_1"
     | "neighborhood"
     | "postal_code";
+
+  /**
+   * The BCP-47 language code, such as "en-US" or "sr-Latn", corresponding to
+   * the language in which the place name and address is requested. If none is
+   * requested, then it defaults to English.
+   */
+  language_code?: string;
+
+  /**
+   * Two-letter ISO-3166 country/region code for the location you're trying to
+   * match. region_code is optional if place_type is "country".
+   */
+  region_code?: string;
 }
 
 export interface SearchRegionRequestData extends PaginationData {

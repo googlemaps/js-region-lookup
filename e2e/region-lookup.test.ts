@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-import { lookupRegion, LookupRegionRequestData } from "../src";
+import {
+  lookupRegion,
+  LookupRegionRequestData,
+  LookupRegionResponse,
+} from "../src";
 
 test("lookupRegion should return a response for valid request", async () => {
   const headers = {
@@ -24,16 +28,15 @@ test("lookupRegion should return a response for valid request", async () => {
   const data: LookupRegionRequestData = {
     identifiers: [
       {
-        location: { place: "newark" },
+        place: "newark",
         place_type: "locality" as const,
         region_code: "us",
-        language: "en",
-        max_candidates: 3,
+        language_code: "en",
       },
     ],
   };
 
-  const response = await lookupRegion({ headers, data });
-  expect(response.data.matches[0].matched_place_id).toBeTruthy();
-  expect(response.data.matches[0].candidate_place_ids.length).toBeTruthy();
+  const response: LookupRegionResponse = await lookupRegion({ headers, data });
+  expect(response.data.matches[0].matchedPlaceId).toBeTruthy();
+  // expect(response.data.matches[0].candidate_place_ids.length).toBeTruthy();
 });

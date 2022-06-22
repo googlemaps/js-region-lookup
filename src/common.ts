@@ -59,13 +59,13 @@ export interface RegionMatch {
    * Place ID of the boundary that is matched. If no match is found, this field
    * is not set.
    */
-  matched_place_id?: string;
+  matchedPlaceId?: string;
   /**
    * Region candidate IDs. Up to three candidates may be requested,
    * as additional options for cases in which either no match is found, or the
    * client-side logic deems the matched Place ID as unsuitable.
    */
-  candidate_place_ids: string[];
+  candidatePlaceIds: string[];
   /**
    * Boundary matching debug information for when no match is found.
    */
