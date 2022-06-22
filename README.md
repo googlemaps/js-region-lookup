@@ -35,7 +35,7 @@ import {
 } from "@googlemaps/region-lookup";
 
 const headers = {
-    "X-Goog-Api-Key": process.env.GOOGLE_MAPS_API_KEY,
+    "X-Goog-Api-Key": "YOUR API KEY",
   };
 
 const data: LookupRegionRequestData = {
