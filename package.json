@@ -39,7 +39,7 @@
     "build": "run-p build:*",
     "clean": "rimraf docs/ dist/",
     "docs": "rimraf docs/ && typedoc src/index.ts",
-    "format": "eslint src e2e --fix",
+    "lint": "eslint src e2e --fix",
     "prepare": "run-s clean build",
     "test:e2e": "jest e2e",
     "test:lint": "eslint src e2e",
