@@ -26,5 +26,5 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: git status
-      - run: node dist/cli.js check . -d
+      - run: node dist/index.iife.js check . -d
         
