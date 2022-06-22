@@ -8,7 +8,7 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Discord](https://img.shields.io/discord/676948200904589322)](https://discord.gg/jRteCzP)
 
-> **Note:** This library wraps a service that is in Alpha status.
+> **Note:** This library wraps a service that is in Experimental status.
 
 ## Install
 
@@ -21,28 +21,36 @@ npm install axios
 
 ## Usage
 
+For complete documentation of this library, see [Use the Region Lookup API](https://developers.google.com/maps/documentation/javascript/dds-boundaries/region-lookup) in the Google Maps Platform documentation.
+
 Below is a simple example calling the `lookupRegion` method of the service.
 
 ```js
-import { lookupRegion } from "@googlemaps/region-lookup";
+import { 
+  lookupRegion, 
+  LookupRegionRequestData, 
+  LookupRegionResponseData, 
+  LookupRegionResponse, 
+  RegionIdentifier 
+} from "@googlemaps/region-lookup";
 
 const headers = {
     "X-Goog-Api-Key": process.env.GOOGLE_MAPS_API_KEY,
   };
 
-  const data: LookupRegionRequestData = {
-    identifiers: [
-      {
-        location: { place: "newark" },
-        place_type: "locality" as const,
-        region_code: "us",
-        language: "en",
-      },
-    ],
-  };
+const data: LookupRegionRequestData = {
+  identifiers: [
+    {
+      place: "newark",
+      place_type: "locality" as const,
+      region_code: "us",
+      language: "en",
+    },
+  ],
+};
 
 try {
-  const response = await lookupRegion({ headers, data });
+  const response: LookupRegionResponse = await lookupRegion({ headers, data });
   console.log(response.data);
 } catch (e) {
   console.log(e.response);

@@ -57,25 +57,23 @@ export interface RegionSearchValue extends LanguageRegion {
   /**
    *  The location must be specified by one of the following: `address`, `latlng` or `place_id`.
    */
-  location: {
-    /**
-     * The unstructured street address that is contained inside a region to
-     * match. `region_code` is required when address is specified.
-     */
-    address?: string;
-    /**
-     * The latitude and longitude that is contained inside a region to match.
-     */
-    latlng?: {
-      latitude: number;
-      longitude: number;
-    };
-    /**
-     * The Place ID that is contained inside a region to match.
-     */
-    place_id?: string;
+  /**
+   * The unstructured street address that is contained inside a region to
+   * match. `region_code` is required when address is specified.
+   */
+  address?: string;
+  /**
+   * The latitude and longitude that is contained inside a region to match.
+   */
+  latlng?: {
+    latitude: number;
+    longitude: number;
   };
-
+  /**
+   * The Place ID that is contained inside a region to match.
+   */
+  place_id?: string;
+  
   /**
    * Place type to match.
    */

@@ -67,45 +67,44 @@ export interface RegionIdentifier extends LanguageRegion {
   /**
    *  The location must be specified by one of the following: `place` or `unit_code`.
    */
-  location: {
-    /**
-     * The name of the region to match to a Place ID.
-     *
-     * The place field is used in combination with place_type to look up
-     * the region Place ID.
-     *
-     * For example:
-     * - If place_type is "locality", a valid place can be "Palo Alto, CA".
-     * - If place_type is "postal_code", a valid place can be "94109".
-     * - If place_type is "country", a valid place can be "United States".
-     *
-     * `region_code` is required when place is specified except when
-     * place_type is "country".
-     */
-    place?: string;
-    /**
-     * The FIPs state or county codes (US only) or ISO-3166-1 country code to be
-     * matched.
-     *
-     * The `unit_code` field is used in combination with `place_type` to look up
-     * the region Place ID.
-     *
-     * For example:
-     * - If `place_type` is "country", a valid `unit_code` can be "US" (ISO-3166-1
-     * Alpha-2 code for United States) or "BR" (ISO-3166-1 Alpha-2 code for
-     * Brazil).
-     * - If `place_type` is "administrative_area_level_1" (state) and `region_code` is
-     * "US", a valid `unit_code` can be "6" (FIPs code for California) or
-     * "12"(FIPs code for Florida).
-     * - If `place_type` is "administrative_area_level_2" (county) and `region_code`
-     * is "US", a valid `unit_code` can be "6001" (FIPs code for Alameda County in
-     * California) or "12086" (FIPs code for Miami-Dade County in Florida).
-     *
-     * `region_code` is required when specifying a FIPs code. `region_code` is
-     * ignored for ISO-3166-1 country codes.
-     */
-    unit_code?: string;
-  };
+  
+  /**
+   * The name of the region to match to a Place ID.
+   *
+   * The place field is used in combination with place_type to look up
+   * the region Place ID.
+   *
+   * For example:
+   * - If place_type is "locality", a valid place can be "Palo Alto, CA".
+   * - If place_type is "postal_code", a valid place can be "94109".
+   * - If place_type is "country", a valid place can be "United States".
+   *
+   * `region_code` is required when place is specified except when
+   * place_type is "country".
+   */
+  place?: string;
+  /**
+   * The FIPs state or county codes (US only) or ISO-3166-1 country code to be
+   * matched.
+   *
+   * The `unit_code` field is used in combination with `place_type` to look up
+   * the region Place ID.
+   *
+   * For example:
+   * - If `place_type` is "country", a valid `unit_code` can be "US" (ISO-3166-1
+   * Alpha-2 code for United States) or "BR" (ISO-3166-1 Alpha-2 code for
+   * Brazil).
+   * - If `place_type` is "administrative_area_level_1" (state) and `region_code` is
+   * "US", a valid `unit_code` can be "6" (FIPs code for California) or
+   * "12"(FIPs code for Florida).
+   * - If `place_type` is "administrative_area_level_2" (county) and `region_code`
+   * is "US", a valid `unit_code` can be "6001" (FIPs code for Alameda County in
+   * California) or "12086" (FIPs code for Miami-Dade County in Florida).
+   *
+   * `region_code` is required when specifying a FIPs code. `region_code` is
+   * ignored for ISO-3166-1 country codes.
+   */
+  unit_code?: string;
 
   /**
    * Place type to match.
